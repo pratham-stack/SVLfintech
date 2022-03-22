@@ -6,7 +6,7 @@ import { TextStyles } from '../components/atoms/Typography';
 import { Button } from 'react-native-paper';
 
 const walletWhite = require('../assets/wallet-white.png');
-const splashImage = require('../assets/new1.png')
+const splashImage = require('../assets/wallet-graphic.png')
 const styles = StyleSheet.create({
     container: {
         height: "100%",
@@ -35,10 +35,10 @@ const styles = StyleSheet.create({
         paddingTop: 5
     },
     loginbutton: {
-       marginTop: 30
+       marginTop: 30,
     },
     signUpbutton: {
-        marginTop: 20
+        marginTop: 20,
     },
     form: {
         backgroundColor: theme.palette.WHITE,
