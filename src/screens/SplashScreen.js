@@ -3,7 +3,8 @@ import { View,Image,StyleSheet,SafeAreaView,Text } from "react-native";
 import theme from '../theme';
 import Typography from '../components/atoms/Typography';
 import { TextStyles } from '../components/atoms/Typography';
-import { Button } from 'react-native-paper';
+import Button, { ButtonStyles } from '../components/atoms/Button';
+import { StackActions } from '@react-navigation/native';
 
 const walletWhite = require('../assets/wallet-white.png');
 const splashImage = require('../assets/wallet-graphic.png')
@@ -35,10 +36,22 @@ const styles = StyleSheet.create({
         paddingTop: 5
     },
     loginbutton: {
-       marginTop: 30,
+       marginTop: 20,
+       height: 45,
+    },
+    loginbuttonstyle: {
+        backgroundColor: theme.palette.BACKGROUND_GREEN, 
+        borderWidth: 1,  
+        borderRadius: 10
     },
     signUpbutton: {
         marginTop: 20,
+    },
+    signupbuttonstyle: {
+        backgroundColor: theme.palette.WHITE, 
+        borderWidth: 1,
+        borderRadius: 10,
+        borderColor: theme.palette.BACKGROUND_GREEN
     },
     form: {
         backgroundColor: theme.palette.WHITE,
@@ -49,15 +62,17 @@ const styles = StyleSheet.create({
         paddingHorizontal: 30
     }
 })
-const handleLoginPress = () => {
-    console.log("LOGIN");
-}
-
 const handleSignUpPress = () => {
     console.log("SIGN UP");
 }
 
 const SplashScreen = ({navigation}) => {
+
+    const handleLoginPress = () => {
+        console.log("LOGIN");
+        // navigation.dispatch(StackActions.replace('Log In'));
+    }
+    
     console.log("Splash Screen");
     return(
         <SafeAreaView>
@@ -78,17 +93,25 @@ const SplashScreen = ({navigation}) => {
                         <View style={styles.headerText}>
                             <Typography text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." textStyle={TextStyles.descTextGrey} />
                         </View>
-                        <View style={styles.loginbutton}>
-                            <Button mode="contained" style={{backgroundColor: theme.palette.BACKGROUND_GREEN, height: 45, borderRadius: 10}}
-                                onPress = {handleLoginPress}
-                                ><Text style={{alignItems:'center'}}>Log In</Text>
-                            </Button>
+                        <View style={styles.loginbutton}>    
+                            <Button 
+                                variant= "outlined"
+                                buttonStyle={styles.loginbuttonstyle}
+                                label='Log In'
+                                color={theme.palette.WHITE}
+                                labelStyle={ButtonStyles.splashButtonStyle}
+                                handleOnPress={handleLoginPress}
+                            />
                         </View>
                         <View style={styles.signUpbutton}>    
-                            <Button mode="contained" style={{backgroundColor: theme.palette.WHITE, borderWidth: 1, borderColor: theme.palette.BACKGROUND_GREEN,height: 45, borderRadius: 10}}
-                                onPress = {handleSignUpPress}
-                                ><Text style={{alignItems:'center', color: '#1C843B'}}>Sign Up</Text>
-                            </Button>
+                            <Button 
+                                variant= "outlined"
+                                buttonStyle={styles.signupbuttonstyle}
+                                label='Sign Up'
+                                color={theme.palette.BACKGROUND_GREEN}
+                                labelStyle={ButtonStyles.splashButtonStyle}
+                                handleOnPress={handleSignUpPress}
+                            />
                         </View>    
                     </View>
                 </View>

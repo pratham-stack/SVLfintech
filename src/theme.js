@@ -7,4 +7,13 @@ const theme = {
     }
 }
 
+export const textInputWhiteBorder = {
+    colors: {
+        //  primary: '#1C843B',
+        //  text: '#1C843B',
+         background: '#EBEFFF',
+      placeholder:'#1C843B',   
+    }
+}
+
 export default theme
