@@ -27,4 +27,14 @@ export const TextStyles = StyleSheet.create({
         fontWeight: '700',
         color: theme.palette.DESCRIPTION_TEXT_GREY
     },
+    headerTextDescGrey: {
+        fontSize: 14,
+        fontWeight: '700',
+        color: theme.palette.DESCRIPTION_TEXT_GREY
+    },
+    otpNumberGrey: {
+        fontSize: 16,
+        fontWeight: '700',
+        color: theme.palette.DESCRIPTION_TEXT_GREY
+    }
 });

@@ -1,24 +1,30 @@
 import * as React from 'react';
 import { Button as PaperButton } from 'react-native-paper';
-import {View,StyleSheet} from 'react-native'
+import {View,StyleSheet,Text} from 'react-native'
 
-const Button = ({icon, variant,buttonStyle,color,labelStyle,handleOnPress,label}) => {
+const Button = ({icon, variant,buttonStyle,color,labelStyle,handleOnPress,label,upperCase}) => {
     return(
         <PaperButton icon={icon}
                 mode={variant}
                 style={buttonStyle}
                 color={color} 
                 labelStyle={labelStyle}
+                uppercase={upperCase}
                 onPress={() => handleOnPress()}>
-           {label}
+               <Text>{label}</Text>
         </PaperButton>
     );
 }
-
 export default Button;
 
 export const ButtonStyles = StyleSheet.create({
     splashButtonStyle: {
-        fontWeight: 'bold'
+        fontSize:18,
+        fontWeight: 'bold',
+        paddingVertical: 3
+    },
+    textButtonStyle: {
+        fontSize:14,
+        fontWeight: '600',
     }
 });

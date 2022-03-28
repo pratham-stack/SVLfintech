@@ -3,6 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import SplashScreen from '../screens/SplashScreen';
 import LoginScreen from '../screens/LoginScreen';
+import SignUpScreen from '../screens/SignUpScreen';
+import OtpVerificationScreen from '../screens/OtpVerificationScreen'
 
 const Stack = createStackNavigator();
 
@@ -16,6 +18,8 @@ const StackNavigation = () => {
         }}>
           <Stack.Screen name='Splash Screen' component={SplashScreen} />
           <Stack.Screen name='Log In' component={LoginScreen} />
+          <Stack.Screen name='Sign Up' component={SignUpScreen} />
+          <Stack.Screen name='OTP Verification' component={OtpVerificationScreen} />
         </Stack.Navigator>
     )
 }

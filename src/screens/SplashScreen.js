@@ -4,7 +4,7 @@ import theme from '../theme';
 import Typography from '../components/atoms/Typography';
 import { TextStyles } from '../components/atoms/Typography';
 import Button, { ButtonStyles } from '../components/atoms/Button';
-import { StackActions } from '@react-navigation/native';
+import { SPLASH_SCREEN } from '../utils/string';
 
 const walletWhite = require('../assets/wallet-white.png');
 const splashImage = require('../assets/wallet-graphic.png')
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     },
     loginbutton: {
        marginTop: 20,
-       height: 45,
+    //    height: 45,
     },
     loginbuttonstyle: {
         backgroundColor: theme.palette.BACKGROUND_GREEN, 
@@ -62,15 +62,17 @@ const styles = StyleSheet.create({
         paddingHorizontal: 30
     }
 })
-const handleSignUpPress = () => {
-    console.log("SIGN UP");
-}
 
 const SplashScreen = ({navigation}) => {
 
     const handleLoginPress = () => {
         console.log("LOGIN");
-        // navigation.dispatch(StackActions.replace('Log In'));
+        navigation.push('Log In');
+    }
+
+    const handleSignUpPress = () => {
+        console.log("SIGN UP");
+        navigation.push('Sign Up');
     }
     
     console.log("Splash Screen");
@@ -88,7 +90,7 @@ const SplashScreen = ({navigation}) => {
                 <View>
                     <View style={styles.form}>
                         <View style={styles.formheader}>
-                            <Typography text="Welcome To E-Wallet" textStyle={TextStyles.titleTextDarkGreen} />
+                            <Typography text={SPLASH_SCREEN.title} textStyle={TextStyles.titleTextDarkGreen} />
                         </View>
                         <View style={styles.headerText}>
                             <Typography text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." textStyle={TextStyles.descTextGrey} />
@@ -97,20 +99,22 @@ const SplashScreen = ({navigation}) => {
                             <Button 
                                 variant= "outlined"
                                 buttonStyle={styles.loginbuttonstyle}
-                                label='Log In'
+                                label={SPLASH_SCREEN.logIn}
                                 color={theme.palette.WHITE}
                                 labelStyle={ButtonStyles.splashButtonStyle}
                                 handleOnPress={handleLoginPress}
+                                upperCase={false}
                             />
                         </View>
                         <View style={styles.signUpbutton}>    
                             <Button 
                                 variant= "outlined"
                                 buttonStyle={styles.signupbuttonstyle}
-                                label='Sign Up'
+                                label={SPLASH_SCREEN.signUp}
                                 color={theme.palette.BACKGROUND_GREEN}
                                 labelStyle={ButtonStyles.splashButtonStyle}
                                 handleOnPress={handleSignUpPress}
+                                upperCase={false}
                             />
                         </View>    
                     </View>
