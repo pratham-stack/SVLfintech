@@ -66,10 +66,10 @@ const styles = StyleSheet.create({
     title: {textAlign: 'center', fontSize: 30},
     codeFieldRoot: {marginTop: 20, flex: 1, justifyContent: 'space-evenly'},
     cell: {
-        width: 50,
-        height: 50,
+        width: 45,
+        height: 45,
         lineHeight: 45,
-        fontSize: 28,
+        fontSize: 27,
         borderWidth: 2,
         color: theme.palette.BACKGROUND_GREEN,
         borderColor: theme.palette.TEXT_INPUT_BACKGROUND,
@@ -153,9 +153,9 @@ const OtpVerificationScreen =  () => {
                     </View>
                 </View>
                 </View>
-                <View style={styles.splashImage}>
+                {/* <View style={styles.splashImage}>
                     <Image source={splashImage} />
-                </View>                
+                </View>                 */}
                 
         </KeyboardAvoidingView>
     );
