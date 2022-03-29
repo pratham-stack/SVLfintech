@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
-import { View,Image, KeyboardAvoidingView,StyleSheet,Text} from "react-native";
+import { View,Image, KeyboardAvoidingView,StyleSheet,Text, Dimensions} from "react-native";
 import Typography from '../components/atoms/Typography';
 import { TextStyles } from '../components/atoms/Typography';
 import { OTP_VERIFICATION } from '../utils/string';
 import Button, { ButtonStyles } from '../components/atoms/Button';
 import theme from '../theme';
+const Height = Dimensions.get('window').height;
 
 import {
     CodeField,
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
     },
     form: {
         backgroundColor: theme.palette.WHITE,
-        marginTop:250,
+        marginTop: 0.35 * Height,
         height: 280,
         width: '90%',
         marginHorizontal: 20,
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
         width: 45,
         height: 45,
         lineHeight: 45,
-        fontSize: 27,
+        fontSize: 28,
         borderWidth: 2,
         color: theme.palette.BACKGROUND_GREEN,
         borderColor: theme.palette.TEXT_INPUT_BACKGROUND,
@@ -153,9 +154,9 @@ const OtpVerificationScreen =  () => {
                     </View>
                 </View>
                 </View>
-                {/* <View style={styles.splashImage}>
+                <View style={styles.splashImage}>
                     <Image source={splashImage} />
-                </View>                 */}
+                </View>                
                 
         </KeyboardAvoidingView>
     );

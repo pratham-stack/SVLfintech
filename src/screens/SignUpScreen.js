@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { View,Image,StyleSheet,SafeAreaView,Text, KeyboardAvoidingView,ScrollView} from "react-native";
+import { View,Image,StyleSheet,SafeAreaView,Text, KeyboardAvoidingView,ScrollView, Dimensions} from "react-native";
 import Typography from '../components/atoms/Typography';
 import { TextStyles } from '../components/atoms/Typography';
 import theme, {textInputGreyBorder}  from '../theme';
@@ -9,6 +9,7 @@ import TextInput from '../components/atoms/TextInput';
 import Button, { ButtonStyles } from '../components/atoms/Button';
 import DatePicker from 'react-native-date-picker'
 import { StackActions } from '@react-navigation/native';
+const Height = Dimensions.get('window').height;
 
 const walletWhite = require('../assets/wallet-white.png');
 const styles = StyleSheet.create({
@@ -20,7 +21,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 60
+        marginTop: 0.07* Height
     },
     form: {
         backgroundColor: theme.palette.WHITE,
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
         borderRadius: 24,
         paddingHorizontal: 30,
-        marginVertical: 50,
+        marginVertical: 0.07 * Height,
         // backgroundColor:'blue',
     },
     formheader: {
@@ -195,7 +196,7 @@ const SignUpScreen =  ({navigation}) => {
                             upperCase={false}
                         />
                     </View>
-                </ScrollView>
+                    </ScrollView>
             </ScrollView>
         </KeyboardAvoidingView>
     );
