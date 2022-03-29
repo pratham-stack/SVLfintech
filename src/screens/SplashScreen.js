@@ -1,43 +1,39 @@
 import React from 'react';
-import { View,Image,StyleSheet,SafeAreaView,Text } from "react-native";
+import { View,Image,StyleSheet,SafeAreaView,Text, Dimensions } from "react-native";
 import theme from '../theme';
 import Typography from '../components/atoms/Typography';
 import { TextStyles } from '../components/atoms/Typography';
 import Button, { ButtonStyles } from '../components/atoms/Button';
 import { SPLASH_SCREEN } from '../utils/string';
+const Height = Dimensions.get('window').height;
+const Width = Dimensions.get('window').width;
+
 
 const walletWhite = require('../assets/wallet-white.png');
 const splashImage = require('../assets/wallet-graphic.png')
 const styles = StyleSheet.create({
     container: {
-        height: "100%",
-        backgroundColor: theme.palette.BACKGROUND_GREEN,
-        flexDirection: 'column',
-        justifyContent: 'space-between',
+        backgroundColor: theme.palette.BACKGROUND_GREEN ,
+        flex: 1
     },
     header: {
-        flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center",
-        marginTop: 60
-    },
-    splashImage: {
-        position: 'absolute',
-        marginTop: 161
+        flex: 1,
+        flexDirection:'row', 
+        justifyContent: 'center', 
+        alignItems: 'center',
     },
     formheader: {
-        justifyContent: "center",
         alignItems: "center",
-        paddingTop: 50
+        justifyContent: 'center',
+        marginTop: 50,
     },
     headerText: {
-        justifyContent: "center",
         alignItems: "center",
-        paddingTop: 5
+        justifyContent: 'center',
+        marginTop: 5
     },
     loginbutton: {
        marginTop: 20,
-    //    height: 45,
     },
     loginbuttonstyle: {
         backgroundColor: theme.palette.BACKGROUND_GREEN, 
@@ -45,7 +41,7 @@ const styles = StyleSheet.create({
         borderRadius: 10
     },
     signUpbutton: {
-        marginTop: 20,
+        marginVertical: 20
     },
     signupbuttonstyle: {
         backgroundColor: theme.palette.WHITE, 
@@ -55,12 +51,16 @@ const styles = StyleSheet.create({
     },
     form: {
         backgroundColor: theme.palette.WHITE,
-        marginBottom: 60,
-        height: 300,
+        height: 0.4 * Height,
         marginHorizontal: 20,
         borderRadius: 24,
-        paddingHorizontal: 30
-    }
+        paddingHorizontal: 30,
+        justifyContent: 'space-evenly',
+        elevation: 0
+    },
+    splashImage: {
+        // elevation: 3
+    },
 })
 
 const SplashScreen = ({navigation}) => {
@@ -77,7 +77,7 @@ const SplashScreen = ({navigation}) => {
     
     console.log("Splash Screen");
     return(
-        <SafeAreaView>
+        <SafeAreaView style={{backgroundColor: 'white', flex: 1}}>
             <View style={styles.container}>
     
                 <View style={styles.header}>
@@ -87,7 +87,7 @@ const SplashScreen = ({navigation}) => {
                     </View>
                 </View>
 
-                <View>
+                <View style={{flex: 3, justifyContent: 'flex-end', marginBottom: "20%" }}>
                     <View style={styles.form}>
                         <View style={styles.formheader}>
                             <Typography text={SPLASH_SCREEN.title} textStyle={TextStyles.titleTextDarkGreen} />
@@ -119,9 +119,9 @@ const SplashScreen = ({navigation}) => {
                         </View>    
                     </View>
                 </View>
-                <View style={styles.splashImage}>
+                {/* <View style={styles.splashImage}>
                     <Image source={splashImage} />
-                </View>
+                </View> */}
             </View>
         </SafeAreaView>
     );
