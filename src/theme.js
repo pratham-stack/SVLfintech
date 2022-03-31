@@ -6,6 +6,8 @@ const theme = {
         DESCRIPTION_TEXT_GREY: "#909090",
         PLACEHOLDER_GREY: "#6faf89",
         TEXT_INPUT_BACKGROUND: '#ebeefe',
+        HOME_BACKGROUND_GREY: '#F6F6F6',
+        WALLET_BALANCE_DARK_GREY: '#4f5676'
     },
     textInput:{
         flat:"flat",

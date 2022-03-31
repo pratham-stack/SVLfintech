@@ -59,7 +59,8 @@ const styles = StyleSheet.create({
         elevation: 0
     },
     splashImage: {
-        // elevation: 3
+        position: 'absolute',
+        top: 100
     },
 })
 
@@ -83,7 +84,7 @@ const SplashScreen = ({navigation}) => {
                 <View style={styles.header}>
                     <Image source={walletWhite} />
                     <View>
-                        <Typography text=" E-Wallet" textStyle={TextStyles.headerTextWhite} style={{}} />
+                        <Typography text=" E-Wallet" textStyle={TextStyles.headerTextWhite} />
                     </View>
                 </View>
 
@@ -120,7 +121,7 @@ const SplashScreen = ({navigation}) => {
                     </View>
                 </View>
                 {/* <View style={styles.splashImage}>
-                    <Image source={splashImage} />
+                    <Image source={splashImage}/>
                 </View> */}
             </View>
         </SafeAreaView>

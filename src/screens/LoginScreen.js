@@ -24,8 +24,8 @@ const styles = StyleSheet.create({
         marginTop: 60
     },
     splashImage: {
-        position: 'absolute',
-        marginTop: 150
+        // position: 'absolute',
+        // marginTop: 150
     },
     formheader: {
         justifyContent: "center",
@@ -46,7 +46,6 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
         borderRadius: 24,
         paddingHorizontal: 30,
-        position:'absolute'
     },
      loginbuttonstyle: {
          marginVertical:10,
@@ -62,6 +61,7 @@ const LoginScreen = ({navigation}) => {
     console.log("Log In Screen");
     const handleLoginPress = () => {
         console.log("LOGIN");
+        navigation.dispatch(StackActions.replace('Home'));
     }
 
     const handleSignUpPress = () => {
@@ -74,7 +74,7 @@ const LoginScreen = ({navigation}) => {
                     <View style={styles.header}>
                         <Image source={walletWhite} />
                         <View>
-                            <Typography text=" E-Wallet" textStyle={TextStyles.headerTextWhite} style={{}} />
+                            <Typography text=" E-Wallet" textStyle={TextStyles.headerTextWhite}/>
                         </View>
                     </View>
                     <View>
@@ -130,9 +130,9 @@ const LoginScreen = ({navigation}) => {
                             />
                         </View>
                     </View>
-                    <View style={styles.splashImage}>
+                    {/* <View style={styles.splashImage}>
                         <Image source={splashImage} />
-                    </View>                
+                    </View>                 */}
             </KeyboardAvoidingView>
     );
 }

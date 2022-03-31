@@ -2,10 +2,10 @@ import * as React from 'react';
 import { StyleSheet, Text as ReactNativeText } from 'react-native';
 import theme from '../../../theme';
 
-const Typography = ({ text, textStyle }) => {
+const Typography = ({ text, textStyle, ...restProps}) => {
     return (
         <ReactNativeText
-            style={textStyle}>{text}
+            style={textStyle} {...restProps}>{text}
         </ReactNativeText>
     );
 };
