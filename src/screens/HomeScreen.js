@@ -91,9 +91,9 @@ const Card = ({backImage, text, icon}) => {
     return(
         <View>
             <TouchableOpacity style={{flex: 1}}>
-                <Image source={backImage} style={{height: 150, width: 150, resizeMode: 'contain'}}/>
+                <Image source={backImage} style={{height: '85%', width: 150, resizeMode: 'contain'}}/>
                 <Image source={icon} style={{position: 'absolute',right: 20, top : 20, height: 50, width: 50, resizeMode: 'contain'}} />
-                <Text style={{position: 'absolute', bottom: 40, left:18, color: theme.palette.WHITE, fontSize: 22}}>{text}</Text>
+                <Text style={{position: 'absolute', bottom: '25%', left:18, color: theme.palette.WHITE, fontSize: 22}}>{text}</Text>
             </TouchableOpacity>
         </View>
     );
@@ -110,7 +110,7 @@ const FooterCard = ({icon, text}) => {
     );
 }
 
-const WalletBalanceCard = () => {
+const WalletBalanceCard = ({navigation}) => {
     return(
         <View style={styles.walletBalanceCard}>
             <Typography text="Your Wallet Balance" textStyle={styles.walletBalanceText} />
@@ -118,9 +118,9 @@ const WalletBalanceCard = () => {
                 <Image source={require('../assets/JMD-icon.png')} style={styles.JMDimage}/>
                 <Typography text="16,120.00" textStyle={styles.walletBalanceAmount} />
             </View>
-            <TouchableOpacity style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+            <TouchableOpacity style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}  onPress={() => navigation.navigate("Wallet")}>
                 <Text style={{color: theme.palette.BACKGROUND_GREEN}}>Go To Wallet</Text>
-                <Image source={require('../assets/arrow-back.png')} style={{height: 10, width: 10, resizeMode: 'contain', marginLeft: 10}}></Image>
+                <Image source={require('../assets/arrow-forward.png')} style={{height: 10, width: 10, resizeMode: 'contain', marginLeft: 10}}></Image>
             </TouchableOpacity>
         </View>
     );
@@ -156,7 +156,7 @@ const HomeScreen = ({navigation}) => {
                     <FooterCard icon={require('../assets/bill-pay.png')}  text={'Bill\nPayment'}/>
                 </View>
             </View>
-            <WalletBalanceCard />
+            <WalletBalanceCard navigation={navigation}/>
         </SafeAreaView>
     );
 }

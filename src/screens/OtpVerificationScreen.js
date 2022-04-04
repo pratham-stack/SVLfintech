@@ -98,6 +98,7 @@ const OtpVerificationScreen =  () => {
     });
     const createAccount = () =>{
         console.log("Hello BOB");
+        navigation.dispatch(StackActions.replace('Home'));
     }
 
 
@@ -107,7 +108,7 @@ const OtpVerificationScreen =  () => {
                 <View style={styles.header}>
                     <Image source={walletWhite} />
                     <View>
-                        <Typography text=" E-Wallet" textStyle={TextStyles.headerTextWhite} style={{}} />
+                        <Typography text=" E-Wallet" textStyle={TextStyles.headerTextWhite}/>
                     </View>
                 </View>
                 <View>

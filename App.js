@@ -9,6 +9,8 @@
 import React from 'react';
 import Route from './src/navigation/Route';
 import { LogBox } from 'react-native';
+import WalletScreen from './src/screens/WalletScreen';
+import HomeScreen from './src/screens/HomeScreen';
 
 const App=()=>{
   

@@ -121,7 +121,7 @@ const LoginScreen = ({navigation}) => {
                                 upperCase={false}                           
                             />
                             <Button 
-                                variant= "text"
+                                variant= "outlined"
                                 label={LOG_IN_SCREEN.signUpInstead}
                                 color={theme.palette.BACKGROUND_GREEN}
                                 handleOnPress={handleSignUpPress}
